@@ -65,4 +65,4 @@ For more information on OLED display with NodeMCU, visit [lastminuteengineers.co
 Get DesktopClockPlus and transform your workspace into a productivity-enhancing hub! Stay focused, organized, and motivated with this smart desktop clock companion.
 
 [![github](https://img.shields.io/badge/Github-mrbhanukab-%23333?style=for-the-badge&logo=GitHub&logoColor=white)](https://github.com/mrbhanukab)<br>
-[![twitter](https://img.shields.io/badge/Twitter-mrbhanuka-%2300acee?style=for-the-badge&logo=Twitter&logoColor=white)](https://twitter.com/mrbhanuka)"
+[![twitter](https://img.shields.io/badge/Twitter-mrbhanuka-%2300acee?style=for-the-badge&logo=Twitter&logoColor=white)](https://twitter.com/mrbhanuka)
