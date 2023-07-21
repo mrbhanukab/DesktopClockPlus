@@ -22,6 +22,9 @@ The DesktopClockPlus project utilizes an ESP8266 microcontroller to drive the OL
 
 8. **Loop Function:** The `loop()` function is the main loop that continuously updates the date and time information, displays the screens sequentially, and clears the OLED display between screen transitions. This loop allows users to cycle through the different screens and access various information at regular intervals. Users can adjust the timing between screens and add additional functionalities within the loop to customize the user experience.
 
+## Video
+<html><iframe width="560" height="315" src="https://www.youtube.com/embed/ZybLtMQlZGE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></html>
+
 ## How to Set Up DesktopClockPlus
 
 1. **Clone the Repository:** Begin by cloning the DesktopClockPlus repository from [GitHub](https://github.com/mrbhanukab/DesktopClockPlus) to your local machine.
