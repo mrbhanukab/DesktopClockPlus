@@ -1,68 +1,81 @@
 # DesktopClockPlus
 
-**DesktopClockPlus** is a creative ESP8266-based project that brings a smart desktop clock with an OLED display to life. This project combines real-time synchronization with Wi-Fi connectivity to provide essential time and date information along with additional useful features to enhance productivity and focus.
+DesktopClockPlus brings digital precision to your desktop, ensuring you never lose track of time! [Click image to watch the video]
 
-## How It Works
+[![Watch the video](https://img.youtube.com/vi/xZVgCSMRmNg/maxresdefault.jpg)](https://youtu.be/xZVgCSMRmNg)
 
-The DesktopClockPlus project utilizes an ESP8266 microcontroller to drive the OLED display and connect to available Wi-Fi networks. The code is organized into several sections, each serving specific functionalities:
+## Table of Contents
+- [Introduction](#introduction)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Supported Operating Systems](#supported-operating-systems)
+- [Setup & Installation](#setup--installation)
+- [Usage](#usage)
+- [Optimizations](#optimizations)
+- [Contribution Guidelines](#contribution-guidelines)
+- [License](#license)
+- [Credits](#credits)
 
-1. **Libraries and OLED Display Configuration:** The necessary libraries, such as SPI, Wire, Adafruit_GFX, and Adafruit_SSD1306, are included to enable seamless communication with the OLED display. The OLED display is configured with the required properties, such as screen dimensions, reset pin, and I2C address.
+## Introduction
 
-2. **Wi-Fi Credentials:** The array `ssid[]` stores the names of Wi-Fi networks, and the array `password[]` stores the corresponding passwords. The variable `numNetworks` holds the total number of Wi-Fi networks available. Users can modify these arrays to add their Wi-Fi credentials.
+DesktopClockPlus is an ESP8266-based project, merging real-time synchronization and Wi-Fi connectivity. Whether you're looking to enhance productivity, focus, or simply keep track of the day, this desktop clock has got you covered.
 
-3. **Date and Time Variables:** The variables `currentTime`, `currentMonthName`, `currentDay`, and `remainingDaysS` are used to store the current time, current month name, current day, and the number of remaining days to a specific target date, respectively. The project includes a countdown timer to track the days remaining until a target date (set as "2023-11-26" by default). Users can customize the target date for their specific use case.
+## Features
 
-4. **Wi-Fi Connection Function:** The `connectToWiFi()` function attempts to connect the ESP8266 to Wi-Fi using the stored credentials. It iterates through the available networks and displays the connection status on the OLED screen. If a connection is successful, it displays a connection message; otherwise, it attempts to connect to the next network. If none of the networks can be connected, it displays a failure message and restarts the ESP8266. This function streamlines the process of connecting the device to Wi-Fi networks without manual intervention.
+- **Wi-Fi Connectivity:** Syncs time via available Wi-Fi networks.
+- **OLED Display:** Ensures clear and crisp time display.
+- **Multiple Screens:** Switch between date, time, countdowns, and motivational quotes.
+- **Customizable:** Personalize Wi-Fi credentials, target dates, and introductory messages.
+- **Countdown Timer:** Keeps track of significant events by counting down days.
 
-5. **Setup Function:** The `setup()` function initializes the serial communication, OLED display, and NTPClient for time synchronization. It also displays an introductory message on the OLED screen, connects to Wi-Fi, and sets the time offset to the local time zone. Users can customize the introductory message or add additional setup steps, such as displaying a custom logo or connecting to a specific Wi-Fi network.
+## Technologies Used
 
-6. **Date and Time Update Function:** The `updateDateTime()` function retrieves the current time from an NTP server using the NTP client library. It formats the time as "HH: MM" and extracts the current month's name and day. Additionally, it calculates the number of remaining days to a specific target date (hardcoded as "2023-11-26"). This functionality allows users to track the days remaining until a significant event, such as an exam. Users can modify the target date and customize the date format according to their preferences.
+- **ESP8266 Microcontroller:** Powers the real-time functionalities.
+- **OLED Display:** Provides a clear visual representation of the date, time, and other data.
+- **Arduino IDE:** Utilized for code development and deployment.
+- **Adafruit Libraries:** Facilitates OLED screen management and more.
 
-7. **Display Functions:** The `display1()`, `display2()`, `display3()`, and `display4()` functions are responsible for displaying different screens on the OLED. They provide information such as the current date and time, remaining days to the target date, random motivational quotes, and icons indicating focus mode. These screens are shown sequentially, and each screen's information is updated periodically. Users can customize the display order, add more screens, or modify the screen content.
+## Supported Operating Systems
+![Arduino](https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=Arduino&logoColor=white)
 
-8. **Loop Function:** The `loop()` function is the main loop that continuously updates the date and time information, displays the screens sequentially, and clears the OLED display between screen transitions. This loop allows users to cycle through the different screens and access various information at regular intervals. Users can adjust the timing between screens and add additional functionalities within the loop to customize the user experience.
+## Setup & Installation
 
-## Video Preview
-https://github.com/mrbhanukab/DesktopClockPlus/assets/87383814/081f9c1b-b828-4813-a207-08e8b0db7658
+### Prerequisites
 
-[Or Watch it on Youtube](https://www.youtube.com/watch?v=ZybLtMQlZGE)
-## How to Set Up DesktopClockPlus
+- Arduino IDE installed on your system.
+- Adafruit_GFX, Adafruit_SSD1306, ESP8266WiFi, WiFiClient, NTPClient, and WiFiUdp libraries installed.
 
-1. **Clone the Repository:** Begin by cloning the DesktopClockPlus repository from [GitHub](https://github.com/mrbhanukab/DesktopClockPlus) to your local machine.
+### Steps
 
-2. **Open the Arduino IDE:** Ensure that you have the Arduino IDE installed on your computer. Open the `DesktopClockPlus.ino` file in the Arduino IDE.
+1. Clone the DesktopClockPlus repository.
+2. Open the `DesktopClockPlus.ino` file in the Arduino IDE.
+3. Install the required libraries.
+4. Configure Wi-Fi credentials.
+5. Connect the ESP8266 to your computer.
+6. Upload the code to the ESP8266.
+7. Assemble and power up.
 
-3. **Install Required Libraries:** In the Arduino IDE, go to "Sketch" > "Include Library" > "Manage Libraries." Search for the required libraries (Adafruit_GFX, Adafruit_SSD1306, ESP8266WiFi, WiFiClient, NTPClient, WiFiUdp) and click "Install" for each one.
+## Usage
 
-4. **Configure Wi-Fi Credentials:** Open the `DesktopClockPlus.ino` file and modify the `ssid[]` and `password[]` arrays with the names and passwords of your Wi-Fi networks. Add or remove networks as needed using the provided format.
+Upon setting up, the DesktopClockPlus will automatically connect to the available Wi-Fi networks, sync the current time, and display the current date, time, countdowns, and motivational quotes on the OLED screen.
 
-5. **Customize Target Date:** If you want to track the days remaining until a specific date other than "2023-11-26," update the `targetYear`, `targetMonth`, and `targetDay` variables in the `updateDateTime()` function.
+## Optimizations
 
-6. **Upload the Code:** Connect your ESP8266 to your computer and select the correct board and port in the Arduino IDE. Then, click "Upload" to flash the code onto the ESP8266.
+The project is streamlined to ensure smooth performance and is modular for easy customization. The Wi-Fi connection function seamlessly connects the device to available networks without manual intervention.
 
-7. **Assembly:** If you haven't done so already, connect the OLED display to the ESP8266 following the appropriate connections. The wire path for the connection ([source](https://lastminuteengineers.com/oled-display-esp8266-tutorial/))<br> ![The wire path for the connection](https://lastminuteengineers.b-cdn.net/wp-content/uploads/arduino/Fritzing-Wiring-OLED-Display-with-ESP8266-NodeMCU.png)
+## Contribution Guidelines
 
-8. **Power Up:** Power up the ESP8266, and you should see the DesktopClockPlus in action on the OLED display.
+DesktopClockPlus welcomes contributions. Fork the repository, make your changes in a new branch, and submit a pull request. Detailed guidelines can be found in the repository.
 
-## Customization
+## License
 
-DesktopClockPlus offers several areas for customization:
-
-- **Wi-Fi Credentials:** Add or remove Wi-Fi networks in the `ssid[]` and `password[]` arrays.
-
-- **Target Date:** Adjust the `targetYear`, `targetMonth`, and `targetDay` variables in the `updateDateTime()` function to track a different target date.
-
-- **Introductory Message:** Modify the setup message displayed in the `setup()` function to personalize the startup sequence.
-
-- **Display Content:** Customize the text and icons shown on each screen in the `display1()`, `display2()`, `display3()`, and `display4()` functions.
+This project is licensed under the terms of the MIT License. You can check out the full license [here](https://github.com/mrbhanukab/DesktopClockPlus/blob/main/LICENSE).
 
 ## Credits
 
-DesktopClockPlus is created by [mrbhanukab](https://github.com/mrbhanukab). Feel free to contribute, report issues, or provide suggestions on the GitHub repository.
+DesktopClockPlus is created by [mrbhanukab](https://github.com/mrbhanukab). For contributions, issues, or suggestions, visit the GitHub repository.
 
-For more information on OLED display with NodeMCU, visit [lastminuteengineers.com](https://lastminuteengineers.com/oled-display-esp8266-tutorial/).
-
-Get DesktopClockPlus and transform your workspace into a productivity-enhancing hub! Stay focused, organized, and motivated with this smart desktop clock companion.
-
-[![github](https://img.shields.io/badge/Github-mrbhanukab-%23333?style=for-the-badge&logo=GitHub&logoColor=white)](https://github.com/mrbhanukab)<br>
-[![twitter](https://img.shields.io/badge/Twitter-mrbhanuka-%2300acee?style=for-the-badge&logo=Twitter&logoColor=white)](https://twitter.com/mrbhanuka)
+[![github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mrbhanukab)
+[![twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/mrbhanuka)
+[![linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/bhanuka-bandara-8a209420a)
+[![kaggle](https://img.shields.io/badge/Kaggle-20BEFF?style=for-the-badge&logo=Kaggle&logoColor=white)](https://www.kaggle.com/bhanukabandara)
