@@ -2,7 +2,7 @@
 
 DesktopClockPlus brings digital precision to your desktop, ensuring you never lose track of time! [Click image to watch the video]
 
-[![Watch the video](https://img.youtube.com/vi/xZVgCSMRmNg/maxresdefault.jpg)](https://youtu.be/xZVgCSMRmNg)
+![Watch the video](https://i.ytimg.com/vi/xZVgCSMRmNg/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhyIEkoNzAP&rs=AOn4CLAzqUmIYDjE99lh4IMgA_aSTCmhDw)
 
 ## Table of Contents
 - [Introduction](#introduction)
